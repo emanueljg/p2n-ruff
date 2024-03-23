@@ -23,10 +23,10 @@
           default = self.packages.${system}.myapp;
         };
 
-        devShells.default = mkPoetryEnv {
+        devShells.default = (mkPoetryEnv {
           projectDir = self;
           preferWheels = true;
-        };
+        }).env;
 
         # devShells.default = pkgs.mkShell {
         #   inputsFrom = [ self.packages.${system}.myapp ];
